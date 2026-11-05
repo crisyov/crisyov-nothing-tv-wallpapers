@@ -1,0 +1,64 @@
+name: Update wallpapers
+
+on:
+  schedule:
+    - cron: '0 8 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: wallpaper-feed
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout generator
+        uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Run generator tests
+        run: python -m unittest discover -s scripts/tests -v
+      - name: Fetch previous feed and mirrored media
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p generated_media
+          if git ls-remote --exit-code origin refs/heads/wallpapers > "$RUNNER_TEMP/feed-ref"; then
+            git fetch --no-tags --depth=1 origin refs/heads/wallpapers
+            git show FETCH_HEAD:wallpapers.json > "$RUNNER_TEMP/previous-wallpapers.json"
+            git archive FETCH_HEAD media 2>/dev/null | tar -x -C "$RUNNER_TEMP" || true
+            if [ -d "$RUNNER_TEMP/media" ]; then cp -a "$RUNNER_TEMP/media/." generated_media/; fi
+            git rev-parse FETCH_HEAD > "$RUNNER_TEMP/previous-feed-sha"
+          else
+            code=$?
+            if [ "$code" -ne 2 ]; then exit "$code"; fi
+            : > "$RUNNER_TEMP/previous-feed-sha"
+          fi
+      - name: Generate bounded feed
+        env:
+          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
+          RAWG_API_KEY: ${{ secrets.RAWG_API_KEY }}
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
+        run: >-
+          python scripts/fetch_wallpapers.py
+          --repository "$GITHUB_REPOSITORY"
+          --previous "$RUNNER_TEMP/previous-wallpapers.json"
+          --verify-images
+      - name: Publish single-commit data branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          python scripts/publish_wallpapers.py --repository "$GITHUB_REPOSITORY" --expected-file "$RUNNER_TEMP/previous-feed-sha"
