@@ -1,0 +1,86 @@
+[
+  {
+    "id": "tmdb-movie-157336",
+    "category": "CINE · MUESTRA",
+    "title": "Interestelar",
+    "subtitle": "2014 • Ciencia ficción • TMDB",
+    "imageUrl": "https://image.tmdb.org/t/p/w780/8sNiAPPYU14PUepFNeSNGUTiHW.jpg"
+  },
+  {
+    "id": "tmdb-movie-78",
+    "category": "CINE · MUESTRA",
+    "title": "Blade Runner",
+    "subtitle": "1982 • Ciencia ficción • TMDB",
+    "imageUrl": "https://image.tmdb.org/t/p/w780/2spEHYDcyE9r9mS7AFEscfKVDzO.jpg"
+  },
+  {
+    "id": "tmdb-movie-335984",
+    "category": "CINE · MUESTRA",
+    "title": "Blade Runner 2049",
+    "subtitle": "2017 • Ciencia ficción • TMDB",
+    "imageUrl": "https://image.tmdb.org/t/p/w780/gNdLJU9TxrpGx4dkZidjys3fyy0.jpg"
+  },
+  {
+    "id": "tmdb-tv-66732",
+    "category": "SERIES · MUESTRA",
+    "title": "Stranger Things",
+    "subtitle": "2016 • Ciencia ficción • TMDB",
+    "imageUrl": "https://image.tmdb.org/t/p/w780/9P4IIMYY3HifqeruZq0ZZ9g7YUi.jpg"
+  },
+  {
+    "id": "tmdb-movie-603",
+    "category": "CINE · MUESTRA",
+    "title": "Matrix",
+    "subtitle": "1999 • Ciencia ficción • TMDB",
+    "imageUrl": "https://image.tmdb.org/t/p/w780/tlm8UkiQsitc8rSuIAscQDCnP8d.jpg"
+  },
+  {
+    "id": "tmdb-movie-11",
+    "category": "CINE · MUESTRA",
+    "title": "Star Wars",
+    "subtitle": "1977 • Aventura • TMDB",
+    "imageUrl": "https://image.tmdb.org/t/p/w780/zqkmTXzjkAgXmEWLRsY4UpTWCeo.jpg"
+  },
+  {
+    "id": "tmdb-movie-27205",
+    "category": "CINE · MUESTRA",
+    "title": "El origen",
+    "subtitle": "2010 • Ciencia ficción • TMDB",
+    "imageUrl": "https://image.tmdb.org/t/p/w780/8ZTVqvKDQ8emSGUEMjsS4yHAwrp.jpg"
+  },
+  {
+    "id": "tmdb-movie-19995",
+    "category": "CINE · MUESTRA",
+    "title": "Avatar",
+    "subtitle": "2009 • Fantasía • TMDB",
+    "imageUrl": "https://image.tmdb.org/t/p/w780/vL5LR6WdxWPjLPFRLe133jXWsh5.jpg"
+  },
+  {
+    "id": "tmdb-movie-438631",
+    "category": "CINE · MUESTRA",
+    "title": "Dune",
+    "subtitle": "2021 • Ciencia ficción • TMDB",
+    "imageUrl": "https://image.tmdb.org/t/p/w780/jYEW5xZkZk2WTrdbMGAPFuBqbDc.jpg"
+  },
+  {
+    "id": "tmdb-tv-1399",
+    "category": "SERIES · MUESTRA",
+    "title": "Juego de tronos",
+    "subtitle": "2011 • Fantasía • TMDB",
+    "imageUrl": "https://image.tmdb.org/t/p/w780/zZqpAXxVSBtxV9qPBcscfXBcL2w.jpg"
+  },
+  {
+    "id": "tmdb-movie-693134",
+    "category": "CINE · MUESTRA",
+    "title": "Dune: Parte dos",
+    "subtitle": "2024 • Ciencia ficción • TMDB",
+    "imageUrl": "https://image.tmdb.org/t/p/w780/eZ239CUp1d6OryZEBPnO2n87gMG.jpg"
+  },
+  {
+    "id": "tmdb-tv-82856",
+    "category": "SERIES · MUESTRA",
+    "title": "The Mandalorian",
+    "subtitle": "2019 • Ciencia ficción • TMDB",
+    "imageUrl": "https://image.tmdb.org/t/p/w780/9zcbqSxdsRMZWHYtyCd1nXPr2xq.jpg"
+  }
+]
